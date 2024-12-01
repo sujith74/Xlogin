@@ -25,20 +25,20 @@ function App() {
     <>
 
     {success ?  
-    <h1>Login Page</h1> 
-    
+    <><h1>Login Page</h1> 
+    <p>Welcome user!</p></>
       : <form className='form' onSubmit={handleSubmit}>
       <h1>Login Page</h1>
       {error && <p className='error'>{error}</p>}
 
-      <label>
-        Username:
-        <input type="text" placeholder='username' required onChange={e =>setUsername(e.target.value)}/>
-      </label>
-      <label>
-        Password:
-        <input type="password" placeholder='password' required onChange={e =>setPassword(e.target.value)} />
-      </label>
+      <label htmlFor="username">
+        Username:     </label>
+        <input type="text" placeholder='username' id="username" required onChange={e =>setUsername(e.target.value)}/>
+  
+      <label htmlFor="password">
+        Password: </label>
+        <input type="password" placeholder='password' id="password" required onChange={e =>setPassword(e.target.value)} />
+      
       <button type="submit">Submit</button>
       </form>
     }
